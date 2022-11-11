@@ -79,11 +79,9 @@ def login(id, s_list):
     while True:
         entered_pin = (input('Enter PIN: '))
         for ndx0 in range(len(s_list)):
-            if id == s_list[ndx0][0]:
-                for ndx1 in range(len(s_list)):
-                    if entered_pin == s_list[ndx0][1]:  # use ndx0 to match pin with correct id (instead of any pin)
-                        print('ID and PIN verified\n')
-                        return True
+            if id == s_list[ndx0][0] and entered_pin == s_list[ndx0][1]:  # use to match id and pin
+                print('ID and PIN verified\n')
+                return True
         else:
             print('ID or PIN incorrect\n')
             return False
